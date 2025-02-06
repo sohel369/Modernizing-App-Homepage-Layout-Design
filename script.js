@@ -494,7 +494,13 @@ document.querySelector(".menu-toggle").addEventListener("click", function () {
     document.querySelector(".mediaScreen").classList.toggle("show");
 });
 
+// Use the correct 'scroll' event
 window.addEventListener('scroll', () => {
-    const menu = document.querySelector('.menu');
-    menu.classList.remove('show');
+    // Check if the mediaScreen has the 'show' class before removing it
+    const mediaScreen = document.querySelector(".mediaScreen");
+    if (mediaScreen.classList.contains("show")) {
+        mediaScreen.classList.remove("show");
+    }
 });
+
+

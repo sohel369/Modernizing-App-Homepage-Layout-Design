@@ -124,6 +124,14 @@ main {
             flex-direction: column;
             margin: 10px 10px;
             gap: 1rem;
+
+            .location-info {
+                .change-town {
+                    margin: 10px 10px;
+                    padding: 10px 20px;
+                    background: #000;
+                }
+            }
         }
 
         .join-discussion {
@@ -131,10 +139,8 @@ main {
             margin: 10px 10px;
         }
 
-        .change-town {
-            margin: 10px 10px;
-            padding: 10px 10px;
-        }
+
+
     }
 }
 
@@ -900,7 +906,7 @@ footer {
                     padding: 10px;
 
                     .news-item {
-                        width: 80%;
+                        width: 100%;
                         padding: 0;
                         margin: 0;
 
@@ -928,16 +934,25 @@ footer {
         }
 
         .leaderboard-section {
-            width: 76%;
-            margin: 0;
-            margin-left: 10px;
+            width: 96%;
+            margin-left: 6px;
         }
 
         .sidebar {
-            .calendar-widget {
-                width: 76%;
-                margin: 0;
-                margin-left: 10px;
+            .calendar-grid {
+                grid-template-columns: repeat(auto-fit, minmax(36px, 1fr));
+                gap: 0.2rem;
+            }
+
+            .day {
+                width: 36px;
+                height: 36px;
+                font-size: 0.9rem;
+            }
+
+            .calendar-controls {
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     }
