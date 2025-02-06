@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleverFeed - Your Town's Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="nav-left">
+
+                <div class="brand">
+                    <h1>CleverFeed</h1>
+                </div>
+            </div>
+            <div class="town-select">
+                <div class="location-info">
+                    <h2 id="currentTown">Sample Town</h2>
+                    <p class="location-details">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="cityState">New York, NY</span> •
+                        <span id="country">United States</span>
+                    </p>
+                </div>
+                <button class="change-town"><i class="fas fa-map-marker-alt"></i> Change Location</button>
+            </div>
+            <div class="auth">
+                <button class="join-discussion"><i class="fas fa-user-plus"></i> Join the Discussion</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="navigation-tabs">
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="menu">
+                <button class="tab active" data-tab="news">News</button>
+                <button class="tab" data-tab="events">Events</button>
+                <button class="tab" data-tab="discussions">Discussions</button>
+                <button class="tab" data-tab="directory">Directory</button>
+            </div>
+            <!-- media screen only-->
+            <div class="mediaScreen">
+                <div class="town-select">
+                    <div class="location-info">
+                        <h2 id="currentTown">Sample Town</h2>
+                        <p class="location-details">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="cityState">New York, NY</span> •
+                            <span id="country">United States</span>
+                        </p>
+                    </div>
+                </div>
+
+                <button class="change-town"><i class="fas fa-map-marker-alt"></i> Change Location</button>
+                <div class="auth">
+                    <button class="join-discussion"><i class="fas fa-user-plus"></i> Join the Discussion</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="content-grid">
+            <div class="main-content">
+                <section id="news-feed">
+                    <article class="news-item">
+                        <div class="news-image"
+                            style="background-image: url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&auto=format&fit=crop')">
+                            <div class="news-category">Local News</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>Local Park Renovation Complete</h3>
+                            <p>The central park renovation project has been completed ahead of schedule...</p>
+                            <div class="meta">
+                                <span class="date">Feb 6, 2025</span>
+                                <span class="author">By Town Council</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- More news items would be dynamically added here -->
+                </section>
+
+                <section class="leaderboard-section">
+                    <div class="leaderboard-header">
+                        <h3><i class="fas fa-trophy"></i> Community Leaderboard</h3>
+                        <div class="leaderboard-tabs">
+                            <button class="leaderboard-tab active" data-tab="weekly">This Week</button>
+                            <button class="leaderboard-tab" data-tab="monthly">This Month</button>
+                        </div>
+                    </div>
+                    <div class="leaderboard-content">
+                        <div class="top-contributors">
+                            <div class="contributor-card top">
+                                <div class="rank">1</div>
+                                <div class="contributor-avatar">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="contributor-info">
+                                    <h4>Sarah Johnson</h4>
+                                    <p>Community Leader</p>
+                                    <div class="contribution-stats">
+                                        <span><i class="fas fa-star"></i> 1,250 points</span>
+                                        <span><i class="fas fa-hands-helping"></i> 15 events</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contributors-list">
+                                <div class="contributor-item">
+                                    <div class="rank">2</div>
+                                    <div class="contributor-brief">
+                                        <i class="fas fa-user-circle"></i>
+                                        <div class="brief-info">
+                                            <h5>Mike Chen</h5>
+                                            <span>950 points</span>
+                                        </div>
+                                    </div>
+                                    <div class="contribution-badge">
+                                        <i class="fas fa-award"></i>
+                                    </div>
+                                </div>
+                                <div class="contributor-item">
+                                    <div class="rank">3</div>
+                                    <div class="contributor-brief">
+                                        <i class="fas fa-user-circle"></i>
+                                        <div class="brief-info">
+                                            <h5>Emma Davis</h5>
+                                            <span>820 points</span>
+                                        </div>
+                                    </div>
+                                    <div class="contribution-badge">
+                                        <i class="fas fa-medal"></i>
+                                    </div>
+                                </div>
+                                <div class="contributor-item">
+                                    <div class="rank">4</div>
+                                    <div class="contributor-brief">
+                                        <i class="fas fa-user-circle"></i>
+                                        <div class="brief-info">
+                                            <h5>Alex Turner</h5>
+                                            <span>780 points</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contributor-item">
+                                    <div class="rank">5</div>
+                                    <div class="contributor-brief">
+                                        <i class="fas fa-user-circle"></i>
+                                        <div class="brief-info">
+                                            <h5>Lisa Wong</h5>
+                                            <span>650 points</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-footer">
+                            <button class="view-all-btn">
+                                View All Contributors <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="sidebar">
+
+                <div class="calendar-widget">
+                    <h3>Calendar 2025</h3>
+                    <div class="calendar-controls">
+                        <select id="monthSelect"></select>
+                        <button id="todayBtn">Today</button>
+                    </div>
+                    <div id="calendar"></div>
+                    <button class="pure-button">View All Events</button>
+                </div>
+                <div class="cta-section">
+                    <h3>Get Involved</h3>
+                    <button class="pure-button-primary">
+                        <i class="fas fa-calendar-plus"></i>
+                        Submit an Event
+                    </button>
+                    <button class="start-discussion">
+                        <i class="fas fa-comments"></i>
+                        Start a Discussion
+                    </button>
+                </div>
+                <div class="discussion-leaderboard"></div>
+                <h3>
+                    <i class="fas fa-fire"></i>
+                    Active Discussions
+                </h3>
+                <ul class="leaderboard-list">
+                    <li>
+                        <span class="rank">1</span>
+                        <span class="topic">New Community Center</span>
+                        <span class="activity">324 participants</span>
+                    </li>
+                    <li>
+                        <span class="rank">2</span>
+                        <span class="topic">Town Park Renovation</span>
+                        <span class="activity">256 participants</span>
+                    </li>
+                    <li>
+                        <span class="rank">3</span>
+                        <span class="topic">Summer Festival Planning</span>
+                        <span class="activity">198 participants</span>
+                    </li>
+                    <li>
+                        <span class="rank">4</span>
+                        <span class="topic">Local Business Support</span>
+                        <span class="activity">167 participants</span>
+                    </li>
+                    <li>
+                        <span class="rank">5</span>
+                        <span class="topic">Youth Programs</span>
+                        <span class="activity">145 participants</span>
+                    </li>
+                </ul>
+        </div>
+
+        <div class="activity-news">
+            <h3>Recent Activities</h3>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>Community Meetup</h4>
+                        <p>25 people joined the downtown cleanup initiative</p>
+                        <span class="activity-time">2 hours ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>New Event Added</h4>
+                        <p>Summer Festival scheduled for June 15</p>
+                        <span class="activity-time">5 hours ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>Discussion Update</h4>
+                        <p>15 new comments on "Town Park Renovation"</p>
+                        <span class="activity-time">1 day ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>New Business Listed</h4>
+                        <p>Welcome "Green Cafe" to our community</p>
+                        <span class="activity-time">2 days ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>New Business Listed</h4>
+                        <p>Welcome "Green Cafe" to our community</p>
+                        <span class="activity-time">2 days ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>New Business Listed</h4>
+                        <p>Welcome "Green Cafe" to our community</p>
+                        <span class="activity-time">2 days ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>New Business Listed</h4>
+                        <p>Welcome "Green Cafe" to our community</p>
+                        <span class="activity-time">2 days ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>New Business Listed</h4>
+                        <p>Welcome "Green Cafe" to our community</p>
+                        <span class="activity-time">2 days ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>New Business Listed</h4>
+                        <p>Welcome "Green Cafe" to our community</p>
+                        <span class="activity-time">2 days ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>New Business Listed</h4>
+                        <p>Welcome "Green Cafe" to our community</p>
+                        <span class="activity-time">2 days ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>New Business Listed</h4>
+                        <p>Welcome "Green Cafe" to our community</p>
+                        <span class="activity-time">2 days ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CleverFeed - Connecting Communities</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
