@@ -490,17 +490,40 @@ document.addEventListener('DOMContentLoaded', () => {
     // ... other initializations
 });
 
-document.querySelector(".menu-toggle").addEventListener("click", function () {
-    document.querySelector(".mediaScreen").classList.toggle("show");
-});
+// document.addEventListener("DOMContentLoaded", function() {
+//     const mediaScreen = document.querySelector(".mediaScreen");
+//     const menuToggle = document.querySelector(".menu-toggle");
 
-// Use the correct 'scroll' event
-window.addEventListener('scroll', () => {
-    // Check if the mediaScreen has the 'show' class before removing it
-    const mediaScreen = document.querySelector(".mediaScreen");
-    if (mediaScreen.classList.contains("show")) {
-        mediaScreen.classList.remove("show");
+//     menuToggle.addEventListener("click", function() {
+//         mediaScreen.classList.toggle("show");
+//     });
+
+//     window.addEventListener('scroll', function() {
+//         if (mediaScreen.classList.contains("show")) {
+//             mediaScreen.classList.remove("show");
+//         }
+//     });
+// });
+// Select the .mediaScreen element and store it in a variable
+const mediaScreen = document.querySelector('.mediaScreen');
+
+// Function to toggle the 'show' class on the .mediaScreen element
+function toggleMenu() {
+    mediaScreen.classList.toggle('show');
+}
+
+// Event listener for the menu toggle button (if you have one)
+document.querySelector('.menu-toggle').addEventListener('click', toggleMenu);
+
+// Event listener for the scroll event to remove 'show' class
+window.onscroll = () => {
+    if (mediaScreen.classList.contains('show')) {
+        mediaScreen.classList.remove('show');
     }
-});
+    else{
+        mediaScreen.classList.remove('show');
+    }
+};
+
 
 

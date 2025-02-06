@@ -42,6 +42,12 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    .town-select {
+        .change-town {
+            padding: 10px 20px;            
+            margin: 10px 10px;
+        }
+    }
 }
 
 .nav-left {
@@ -107,11 +113,11 @@ main {
     }
 
     .mediaScreen {
-        height: 86vh;
+        height: 90vh;
         width: 100%;
         position: absolute;
-        top: 80px;
         left: 0;
+        bottom: 0;
         z-index: 1000;
         display: none;
         background: #aeb4ff;
@@ -125,12 +131,10 @@ main {
             margin: 10px 10px;
             gap: 1rem;
 
-            .location-info {
-                .change-town {
-                    margin: 10px 10px;
-                    padding: 10px 20px;
-                    background: #000;
-                }
+            .change-town {
+                margin: 10px 10px;
+                padding: 10px 20px;
+                background: #000;
             }
         }
 
@@ -138,9 +142,6 @@ main {
             display: block;
             margin: 10px 10px;
         }
-
-
-
     }
 }
 
@@ -863,18 +864,16 @@ footer {
             display: none;
         }
 
-        /* .show.menu {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        } */
-
         .menu-toggle {
             display: block;
             position: fixed;
             right: 16px;
             top: 10px;
             z-index: 1000;
+        }
+        .change-town {
+            padding: 10px 20px;            
+            margin: 10px 10px;
         }
 
     }
