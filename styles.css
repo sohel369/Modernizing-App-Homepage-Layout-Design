@@ -112,6 +112,12 @@ main {
         border: none;
         outline: none;
         font-size: 20px;
+        background: transparent;
+        transition: .5s ease;
+        border-radius: 4px;
+        &:hover{
+            background: #999;
+        }
     }
 
     .menu {
