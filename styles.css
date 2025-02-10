@@ -43,6 +43,12 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    .town-select {
+        .change-town {
+            padding: 10px 20px;            
+            margin: 10px 10px;
+        }
+    }
 }
 
 .nav-left {
@@ -65,10 +71,11 @@ header {
     color: var(--primary-color);
 }
 
-.brand h1 {
-    color: var(--primary-color);
+.brand {
     font-size: 1.5rem;
     margin: 0;
+    font-weight: 500;
+    color: #2575fc;
 }
 
 .join-discussion {
@@ -90,9 +97,6 @@ header {
     padding: 10px 20px;
     cursor: pointer;
 }
-
-
-
 /* Main Content */
 main {
     max-width: 1200px;
@@ -109,7 +113,6 @@ main {
         display: flex;
         gap: 1rem;
     }
-
 }
 
 .tab {
@@ -888,18 +891,16 @@ footer {
             box-shadow: 0 0 2px salmon;
         }
 
-        /* .show.menu {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        } */
-
         .menu-toggle {
             display: block;
             position: fixed;
             right: 16px;
             top: 10px;
             z-index: 1000;
+        }
+        .change-town {
+            padding: 10px 20px;            
+            margin: 10px 10px;
         }
 
     }

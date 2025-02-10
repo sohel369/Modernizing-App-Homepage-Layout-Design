@@ -484,3 +484,15 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeLeaderboard();
     // ... other initializations
 });
+
+function toggleMenu() {
+    const toggleMenu = document.querySelector('.mediaScreen');
+    toggleMenu.classList.toggle('show');
+}
+
+window.addEventListener('scroll', function() {
+    const toggleMenu = document.querySelector('.mediaScreen');
+    toggleMenu.classList.remove('show');
+});
+
+
