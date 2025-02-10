@@ -108,6 +108,11 @@ main {
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
+    .menu-bars {
+        border: none;
+        outline: none;
+        font-size: 20px;
+    }
 
     .menu {
         display: flex;
