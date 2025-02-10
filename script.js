@@ -18,11 +18,6 @@ tabs.forEach(tab => {
     });
 });
 
-// Menu Toggle Functionality
-menuToggle.addEventListener('click', () => {
-    navigation.classList.toggle('show');
-});
-
 // Location handling
 function updateLocation(town, city, state, country) {
     document.getElementById('currentTown').textContent = town;
@@ -488,13 +483,4 @@ function showContributorProfile(name) {
 document.addEventListener('DOMContentLoaded', () => {
     initializeLeaderboard();
     // ... other initializations
-});
-
-document.querySelector(".menu-toggle").addEventListener("click", function () {
-    document.querySelector(".mediaScreen").classList.toggle("show");
-});
-
-window.addEventListener('scroll', () => {
-    const menu = document.querySelector('.menu');
-    menu.classList.remove('show');
 });

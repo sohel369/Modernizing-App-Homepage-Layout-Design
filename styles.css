@@ -22,6 +22,7 @@ body {
     color: var(--text-color);
     background-color: var(--secondary-color);
     width: 100%;
+
 }
 
 /* Header Styles */
@@ -85,6 +86,9 @@ header {
 
 .join-discussion:hover {
     background-color: #357abd;
+} button {
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
 
@@ -106,36 +110,6 @@ main {
         gap: 1rem;
     }
 
-    .mediaScreen {
-        height: 86vh;
-        width: 100%;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        z-index: 1000;
-        display: none;
-        background: #aeb4ff;
-        color: #000;
-        padding: 1rem;
-        gap: 20px;
-
-        .town-select {
-            display: flex;
-            flex-direction: column;
-            margin: 10px 10px;
-            gap: 1rem;
-        }
-
-        .join-discussion {
-            display: block;
-            margin: 10px 10px;
-        }
-
-        .change-town {
-            margin: 10px 10px;
-            padding: 10px 10px;
-        }
-    }
 }
 
 .tab {
@@ -826,35 +800,92 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .main-nav {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
+
 
     header {
-        height: 60px;
-        background: #000;
+        height: 80px;
         width: 100%;
-    }
+        background: #000000;
+        margin-bottom: 10px;
 
-    .join-discussion {
-        display: none;
-    }
+        .main-nav {
+            width: 100%;
 
-    .nav-left {
-        position: absolute;
-        left: 16px;
-        top: 10px;
-    }
+            .nav-left {
+                display: none;
+            }
 
-    .town-select {
-        display: none;
+            .auth {
+                display: block;
+            }
+
+            .join-discussion {
+                padding: 8px 10px;
+                font-size: 12px;
+                font-weight: 500;
+
+                i {
+                    display: none;
+                }
+            }
+
+            .nav-left {
+                position: absolute;
+                left: 16px;
+                top: 10px;
+            }
+
+            .town-select {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .location-info {
+                    h2 {
+                        font-size: 16px;
+                        color: #fff;
+                    }
+                }
+
+                .location-details {
+                    display: none;
+                }
+
+                .change-town {
+                    font-size: 0;
+                    padding: 8px 10px;
+                    border-radius: 4px;
+                    border: none;
+                    outline: none;
+                    box-shadow: none;
+                    margin-right: 10px;
+                    background: transparent;
+
+                    i {
+                        display: block;
+                        font-size: 22px;
+                        color: #fff;
+
+                    }
+                }
+
+               
+            }
+
+        }
+
     }
 
     .navigation-tabs {
         .menu {
-            display: none;
+            margin-top: 14px;
+            width: 100%;
+            flex-direction: column;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #000;
+            border-radius: 10px;
+            box-shadow: 0 0 2px salmon;
         }
 
         /* .show.menu {
@@ -900,7 +931,7 @@ footer {
                     padding: 10px;
 
                     .news-item {
-                        width: 80%;
+                        width: 100%;
                         padding: 0;
                         margin: 0;
 
@@ -928,16 +959,25 @@ footer {
         }
 
         .leaderboard-section {
-            width: 76%;
-            margin: 0;
-            margin-left: 10px;
+            width: 96%;
+            margin-left: 6px;
         }
 
         .sidebar {
-            .calendar-widget {
-                width: 76%;
-                margin: 0;
-                margin-left: 10px;
+            .calendar-grid {
+                grid-template-columns: repeat(auto-fit, minmax(36px, 1fr));
+                gap: 0.2rem;
+            }
+
+            .day {
+                width: 36px;
+                height: 36px;
+                font-size: 0.9rem;
+            }
+
+            .calendar-controls {
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     }
