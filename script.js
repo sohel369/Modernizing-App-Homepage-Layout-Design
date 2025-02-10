@@ -490,9 +490,17 @@ function toggleMenu() {
     toggleMenu.classList.toggle('show');
 }
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const toggleMenu = document.querySelector('.mediaScreen');
     toggleMenu.classList.remove('show');
 });
+function menuShow() {
+    let mScreen = document.querySelector('.menu');
+    mScreen.classList.toggle('show')
+};
+window.addEventListener('scroll', function () {
+    let mScreen = document.querySelector('.menu');
+    mScreen.classList.remove('show')
 
+})
 
